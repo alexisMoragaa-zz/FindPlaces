@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import {FormsModule} from '@angular/forms'
+//importamos el formsModules
 import { AppComponent } from './app.component';
 
 
@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,//importamos el formsModule para usar la co
   ],
   providers: [],
   bootstrap: [AppComponent]
