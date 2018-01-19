@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <h3 class="center mb-4 mt-4">Ejemplos de Data Binding</h3>
+  <h3 class="center mb-4 mt-4 text-muted">Ejemplos de Data Binding</h3>
 
   <h5 class="mt-3">Este es un ejemplo de data binding con  "{{ title }}!"</h5>
   <p>Para este ejemplo el texto {{title}} es una variable enviada desde typescript usando {{title}}</p>
@@ -26,89 +26,214 @@
   <p>En este ejemplo como su nombre lo indica quedamos a la espera de que se ejecute el evento click para establecer la comunicacion y traer un alert desde typescript</p>
   <!-- para asignar envent Binding usamos parentesis destro de los cuales de pasamos el evento  y le damos como valor el nombre de la funcion que ejecutara -->
 
-  <h5 class="mt-4">En el ultimo ejemplo usaremos Two Data Binding</h5>
-<div class="row">
-  <div class="col-md-3">
-    <label for="" class="control-label">Ingresa tu Nombre</label>
-    <input type="text" class="form-control" placeholder="Ingresa tu nombre" [(ngModel)]="name">
-  </div>
-  <div class="col-md-3">
-    <label for="" class="control-label">Ingresa tu Apellido</label>
-    <input type="text" class="form-control" placeholder="Ingresa tu Apellido" [(ngModel)]="lastName">
-  </div>
-  <div class="col-md-6">
+
     <div class="row">
-      <div class="col-md-12 center">
-          <h5>Tu Nombre completo es</h5>
+      <div class="col-md-12">
+        <h5 class="mt-4">En el ultimo ejemplo usaremos Two Data Binding</h5>
       </div>
-      <div class="col-md-12 center">
-          <h4>{{name +' '+ lastName}}</h4>
+
+      <div class="col-md-3">
+        <label for="" class="control-label">Ingresa tu Nombre</label>
+        <input type="text" class="form-control" placeholder="Ingresa tu nombre" [(ngModel)]="name">
       </div>
-    </div>
 
-  </div>
-
-</div>
-
-  <p>Two Data Binding comunica typescript con html y html con tipescript, permtiendonos interactuar en tiempo real cn lo que sucede en nuestro Front End</p>
-
-  <h3 class="center  mt-4">ngFor</h3>
-  <div class="row  align-items-center">
-    <div class="col-md-3">
-      <ul>
-        <li *ngFor ="let list of lista">{{list.nombre}}</li>
-      </ul>
-    </div>
-    <div class="col-md-9">
-      <p>ngFor es basicamente un ciclo for con el cual en este caso recorremos un arreglo enviado desde TypeScript</p>
-    </div>
-  </div>
-
-  <h3 class="center  mt-4">ngIf</h3>
-  <div class="row  align-items-center">
-    <div class="col-md-3">
-      <ul *ngFor="let lis of listangif">
-        <li *ngIf="lis.active">{{lis.nombre}}</li>
-      </ul>
-    </div>
-    <div class="col-md-9">
-      <p>ngIf es basicamente un If que en conjunto con ngFor podemos determinar que elementos mostrar y cuales no al recorrer un array
+      <div class="col-md-3">
+        <label for="" class="control-label">Ingresa tu Apellido</label>
+        <input type="text" class="form-control" placeholder="Ingresa tu Apellido" [(ngModel)]="lastName">
       </div>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12 center">
+              <h5>Tu Nombre completo es</h5>
+          </div>
+          <div class="col-md-12 center">
+              <h4>{{name +' '+ lastName}}</h4>
+          </div>
+        </div>
+      </div>
+      <p>Two Data Binding comunica typescript con html y html con tipescript, permtiendonos interactuar en tiempo real cn lo que sucede en nuestro Front End</p>
     </div>
+
+
+    <h2 class="text-muted center mt-4 mb-4">Directivas ngFor/ngIf/ngStyle/ngClass/ngSwitch</h2>
 
     <div class="row  align-items-center">
       <div class="col-md-12">
-        <h3 class="center  mt-5">Desafio Etapa Conceptos Basicos</h3>
-        <p>de Una lista seleccionar y mostrar solo los mayores de 18 años</p>
+        <h3 class="center  ">ngFor</h3>
       </div>
-
       <div class="col-md-4">
-        <li>Esta es la lista completa sin filtrar</li>
         <ul>
-          <li *ngFor="let des of desafio" >nombre = {{des.nombre}} / edad = {{des.edad}}</li>
+          <li *ngFor ="let list of desafio">{{list.nombre}} / Edad = {{list.edad}}</li>
         </ul>
       </div>
+      <div class="col-md-8">
+        <p>ngFor es basicamente un ciclo for con el cual en este caso recorremos un arreglo enviado desde TypeScript</p>
+      </div>
+    </div> <!-- Fin DIrectiva ngFor -->
 
+    <div class="row  align-items-center">
+      <div class="col-md-12">
+        <h3 class="center">ngIf</h3>
+      </div>
       <div class="col-md-4">
-        <li>Esta es ya filtrada sin los menores de 18</li>
-        <ul *ngFor="let des of desafio">
-          <li *ngIf="des.edad >=18" >nombre = {{des.nombre}} / edad = {{des.edad}}</li>
+        <ul>
+          <ng-container *ngFor="let lis of desafio">
+            <li *ngIf="lis.active">{{lis.nombre}} / Edad = {{lis.edad}}</li>
+          </ng-container>
         </ul>
       </div>
+      <div class="col-md-8">
+        <p>ngIf es basicamente un If que en conjunto con ngFor podemos determinar que elementos mostrar y cuales no al recorrer un array
+      </div>
+    </div> <!-- Fin DIrectiva ngIf -->
 
+    <div class="row  align-items-center">
+      <div class="col-md-12">
+        <h3 class="center">ngStyle</h3>
+      </div>
       <div class="col-md-4">
-        <p>Usando *ngFor en conjunto de *ngIf filtramos los valores de una coleccion que mostramos en la vista</p>
+        <ul >
+          <ng-container *ngFor="let des of desafio">
+            <li [ngStyle]="{color:(des.edad >=18) ? 'black' : 'gray'}">{{des.nombre}} / edad = {{des.edad}}</li>
+              <!-- Para ngStyle usamos corchetes, ya que es una directiva de atributo, a continucacion entre llaves le indicamos
+               que atributto deseamos modificar, luego entre parentecis de pasamos la condicion aevaluar, y finalmente usando el
+               operador ternario "?" le decimos que ponga en black si la condicion es true, o gray si la condicion es false -->
+          </ng-container>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <p>En Este caso usamos ngStyle para cambial la propiedad color de css en caso de que se cumpla una condicion o no.
+          en este caso la condicion a evaluar es ser mayor de 18 años</p>
         </div>
-      </div>
+      </div> <!-- Fin DIrectiva ngStyle -->
 
-<div class="mb-5 mt-4">
-  <h3 class="center">Ejemplo de Angular Maps</h3>
-  <agm-map [latitude]="lat" [longitude]="lng" >
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
-  <p>Usando la libreria de Angular maps Descargada con npm posicionamos un mapa al cual le pasamos como parametro latitud y longitud de la ubicacion en la cual deseamos poner un marcador y listo.
-     angular hace el resto por nosotros</p>
-</div>
+      <div class="row  align-items-center">
+        <div class="col-md-12">
+          <h3 class="center">ngClass</h3>
+        </div>
+        <div class="col-md-4">
+          <ol >
+            <ng-container *ngFor="let des of desafio; let i=index">
+              <li [ngClass]="{numero_par:(i+1) % 2 == 0}">{{des.nombre}} / edad = {{des.edad}}</li>
+            <!-- al igual que ngStyle ngClass es una dorectiva de atributo a la cual le pasamos entre llaves como primer parametro
+              la clase que se aplicara, y como seundo parametro la condicion que se evaluara para aplicar dicha clase. en este caso evaluamos si el index es par o inpar
+              para obtener nuestro index lo asignamos como fariable en nuestro ngFor, luego con una simple operacion matematica determinamos si el index es par o impar. -->
+            </ng-container>
+          </ol>
+        </div>
+        <div class="col-md-8">
+          <p>ngClass es similar a ngStyle, pero en ete caso podemos aplicar una clase de css completa a lso elementos cuando cumplan la condicion, a diferencia
+           en este caso la condicion a cumplirse de ngStyle con la que solo podemos agregar una propiedad de css cuando se cumpla la condicion
+           es por cada numero par que refleje el index</p>
+          </div>
+        </div> <!-- Fin DIrectiva ngClass -->
+
+
+        <div class="row  align-items-center">
+          <div class="col-md-12">
+            <h3 class="center">ngSwitch</h3>
+          </div>
+          <div class="col-md-4">
+            <ol >
+              <ng-container *ngFor="let des of desafio" [ngSwitch]="des.cercania">
+                <li [ngClass]="{numero_par:(i+1) % 2 == 0}">{{des.nombre}} / edad = {{des.edad}}
+                  <span *ngSwitchCase="1" [ngStyle]="{color:'green'}">/ Al lado</span>
+                  <span *ngSwitchCase="2" [ngStyle]="{color:'#00BFFF'}">/ Muy Cercano</span>
+                  <span *ngSwitchCase="3" [ngStyle]="{color:'#DF7401'}">/ Cercano</span>
+                  <span *ngSwitchCase="4" [ngStyle]="{color:'red'}">/ Lejano</span>
+                </li>
+              </ng-container>
+            </ol>
+          </div>
+          <div class="col-md-8">
+            <p>Con ngSwicth mesclamos directivas de atributos y de estructura para mostrar una etiqueta span, en la cual se ve reflejada la distancia en la que se encuentra una pesona
+              en base a la distancia que añadimos en nuestro array, de esta forma usamos los case para mostrar una u otra etiqueta dependiendo del caso <br>
+              Ademas usamos *ngStyle para dotar nuestras etiquetas de un color en particular </p>
+            </div>
+          </div> <!-- Fin DIrectiva ngSwitch -->
+
+
+        <div class="row  align-items-center">
+          <div class="col-md-12">
+            <h3 class="center  mt-5">Desafio Etapa Conceptos Basicos</h3>
+            <p>de Una lista seleccionar y mostrar solo los mayores de 18 años</p>
+          </div>
+
+          <div class="col-md-4">
+            <li>Esta es la lista completa sin filtrar</li>
+            <ul>
+              <li *ngFor="let des of desafio" >nombre = {{des.nombre}} / edad = {{des.edad}}</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <li>Esta es ya filtrada sin los menores de 18</li>
+            <ul>
+              <ng-container *ngFor="let des of desafio">
+                <li *ngIf="des.edad >=18" >nombre = {{des.nombre}} / edad = {{des.edad}}</li>
+              </ng-container>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <p>Usando *ngFor en conjunto de *ngIf filtramos los valores de una coleccion que mostramos en la vista</p>
+          </div>
+        </div>
+
+
+        <div class="row  align-items-center mt-3">
+          <div class="col-md-12">
+            <h3 class="center  ">Creando nuestra Propia directiva de atributo</h3>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li *ngFor ="let list of desafio" [resaltar]="list.existe">{{list.nombre}} / Edad = {{list.edad}} / existe = {{list.existe}}</li>
+                <!-- Usamos nuestra directiva de atributo recien creada, y le enviamos como parametro la posicion del arra que deseamos evaluar -->
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <p>en este ejemplo creamos nuestra propia directiva, la cual como vemos en ejemplo añade un background a los elementos
+            que tengan en false la posicion existe del array. <br>
+            Para esto creamos una caprpeta llamada directives y un archivo llamado resaltar.directives.ts, y en este creamos nuestra directiva
+          , una vez creada realizamos la importacion en el archivo app.module.ts </p>
+          </div>
+        </div> <!-- Fin creando nuestra propia directiva -->
+
+
+
+        <div class="row  align-items-center">
+          <div class="col-md-12">
+            <h3 class="center">HostListener y HostBinding</h3>
+          </div>
+          <div class="col-md-4">
+            <ol >
+              <ng-container *ngFor="let des of desafio" [ngSwitch]="des.cercania">
+                <a><li contar-clicks [ngClass]="{numero_par:(i+1) % 2 == 0}">{{des.nombre}} / edad = {{des.edad}}
+                  <span *ngSwitchCase="1" [ngStyle]="{color:'green'}">/ Al lado</span>
+                  <span *ngSwitchCase="2" [ngStyle]="{color:'#00BFFF'}">/ Muy Cercano</span>
+                  <span *ngSwitchCase="3" [ngStyle]="{color:'#DF7401'}">/ Cercano</span>
+                  <span *ngSwitchCase="4" [ngStyle]="{color:'red'}">/ Lejano</span>
+                </li></a>
+              </ng-container>
+            </ol>
+          </div>
+          <div class="col-md-8">
+            <p>Usando Host Listener quedamos a la eschucha de un evento en particular, en este caso el evento click ocurrido sobre los elementos
+            , luego con HostBinding editamos los elementos de html afectados por el evento click, en este caso bajamos la opacidad de todos los elementos seleccionados
+          por la directiva de atributos creada para el conteo de clicks, y porcada click realizado aumentamos la opacidad en .1 al elemento clickeado</p>
+            </div>
+          </div> <!-- Fin DIrectiva ngSwitch -->
+
+
+        <div class="mb-5 mt-4">
+          <h3 class="center">Ejemplo de Angular Maps</h3>
+          <agm-map [latitude]="lat" [longitude]="lng" >
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+          <p>Usando la libreria de Angular maps Descargada con npm posicionamos un mapa al cual le pasamos como parametro latitud y longitud de la ubicacion en la cual deseamos poner un marcador y listo.
+             angular hace el resto por nosotros</p>
+        </div>
 
 
 </div>

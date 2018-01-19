@@ -29,26 +29,15 @@ export class AppComponent {
 
   clickme(){
     alert('hiciste click en el boton y desencadenaste la funcion asignada mediante Event Binding');
-  }
+  }// esta es una funcion para mostrar un ejemplo de event Binding, ya que se desencadena con el evento click de un boton en nuestro html
 
-  name='';
+  name='';//name y last name son variables que usamos para el ejemplo de twoDataBinding, que comunica el html con el controller y viceversa
   lastName='';
 
-  lista:any=[
-    {nombre:'Valentina Diaz'},
-    {nombre:'Alexis Moraga'},
-    {nombre:'Bastian Moraga'}
-  ];
-
-  listangif:any=[
-    {active:true,nombre:'Valentina Diaz'},
-    {active:true,nombre:'Alexis Moraga'},
-    {active:false,nombre:'Bastian Moraga'}
-  ];
-
   desafio:any=[
-    {nombre:'Alexis Moraga',edad:25},
-    {nombre:'Valentina Diaz',edad:27},
-    {nombre:'Bastian Moraga',edad:4}
-  ];
+    {existe:'si',cercania:1, distancia:1, nombre:'Alexis Moraga', edad:25, active:true},
+    {existe:'si',cercania:2, distancia:5, nombre:'Valentina Diaz', edad:27, active:true},
+    {existe:'si',cercania:3, distancia:10, nombre:'Bastian Moraga', edad:4, active:true},
+    {existe:'no',cercania:4, distancia:100, nombre:'Sofia Moraga', edad:0, active:false}
+  ];//este es el array que usamos a lo largo de todos los ejemplos con listas en nuestra html
 }
