@@ -1,0 +1,15 @@
+.contenido{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.center{
+  text-align: center;
+}
+agm-map {
+  height: 300px;
+}
+.numero_par{
+  background-color: aliceblue;
+  color:blue;
+}
