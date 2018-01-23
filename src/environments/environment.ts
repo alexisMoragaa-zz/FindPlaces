@@ -5,4 +5,12 @@
 
 export const environment = {
   production: false
+  firebase: {
+    apiKey: "AIzaSyC5OlRiXfm7V7kcqgXhgg0Xl4ErSMw4Lzs",
+    authDomain: "cursoangular4-1516112349964.firebaseapp.com",
+    databaseURL: "https://cursoangular4-1516112349964.firebaseio.com",
+    projectId: "cursoangular4-1516112349964",
+    storageBucket: "cursoangular4-1516112349964.appspot.com",
+    messagingSenderId: "4167824223"
+ }
 };

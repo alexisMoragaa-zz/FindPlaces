@@ -1,0 +1,45 @@
+
+  <div class="container mb-5 mb-5" >
+
+  <div class="row mt-5">
+    <div class="col-md-8 mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Crear Negocio</h5>
+            <form action="">
+              <label for="" class="control-label">Nombre</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.name" name="name">
+
+              <label for="" class="control-label">Plan</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.plan" name="plan">
+
+              <label for="" class="control-label">Descripcion</label>
+              <textarea name="name" rows="4" cols="80" [(ngModel)]="lugar.description" name="description"class="form-control"></textarea>
+            </form>
+          <a  class="btn btn-primary mt-3 right" (click)="guardarLugar()">Enviar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-5">
+      <div class="card text-center">
+        <div class="card-header">
+          MiRecoleta
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Nuestra Vision</h5>
+          <p class="card-text">En MiRecoleta queremos que conoscas tu comuna, queremos que sepas donde se encuentran
+             esos lugares unicos especiales que hacen de nuestra comuna un lugar unico y especial
+             donde vivir</p>
+
+             <h5 class="card-title">Nuestra Mision</h5>
+             <p class="card-text">Conectar lugares y negocios con personas, dandote a conocer un mundo de pisivilidades
+                que normalmente son poco accesible devido a su falta de publicidad o propaganda</p>
+        </div>
+        <div class="card-footer text-muted">
+          @MiRecoleta
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
