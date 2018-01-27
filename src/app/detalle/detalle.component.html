@@ -1,13 +1,13 @@
+<div class="container mt-2">
 
-  <agm-map style="height:300px" [latitude]="lat" [longitude]="lng" >
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-map style="height:500px" [latitude]="lat" [longitude]="lng" >
+    <agm-marker [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
   </agm-map>
 
-
-<div class="container mt-2">
-  <h1 class="text-muted">{{lugar.name}}</h1>
+  <h1 class="text-muted text-center">{{lugar.name}}</h1>
   <hr/>
-  <small>Distancia : {{lugar.distancia}} Km</small>
+
+  <small>Distancia :  Km</small>
   <div class="card">
     <div class="card-body">
       <p>{{lugar.description}}</p>
@@ -16,9 +16,5 @@
       <b>Subscripcion {{lugar.plan}}</b>
     </div>
   </div>
-
-
-
-
 
 </div>

@@ -12,15 +12,15 @@ export class DetalleComponent{
   lng:number=-70.64833810000005;//longitud para cargar el marcador en el mapa
 id = null;
 lugar:any = {};
-constructor(private route: ActivatedRoute, private lugaresService: LugaresService){
-  // console.log(this.route.snapshot.params['id']);
+constructor(private route: ActivatedRoute, private lugaresServices: LugaresService){
+  console.log(this.route.snapshot.params['id']);
   // console.log(this.route.snapshot.queryParams['action']);
   this.id = this.route.snapshot.params['id'];
-  this.lugaresService.buscarLugar(this.id)
-  .valueChanges().subscribe(lugares => {
-
-    this.lugares = lugares;
+  this.lugaresServices.getLugar(this.id)
+  .valueChanges().subscribe(lugar => {
+    this.lugar = lugar;
   });
+
 }
 
 

@@ -1,28 +1,49 @@
-<div class="container-fluid mt-3">
-<div class="row  mb-5 ">
-  <div class="mt-1 col-md-9">
-    <agm-map [latitude]="lat" [longitude]="lng" >
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-    </agm-map>
-  </div>
-  <div class="row col-md-3">
-    <div class="">
-      <a routerLink="/crearnegocio" class="btn btn-primary">Crear Negocio</a>
-      <h2>Lugares Cercanos</h2>
-      <ul class="list-group">
-        <ng-container *ngFor="let lugar of lugares">
-        <a routerLink="/detalle/1" [queryParams]="{action:'view'}"><li  class="list-group-item">{{lugar.name}}</li></a>
-        </ng-container>
-      </ul>
-    </div>
+<div class="container ">
+  <div class="row">
 
-    <div class="col-md-4">
-      <h2>Destacados</h2>
-    </div>
-  </div>
+    <div class="col-12 mt-2">
+      <div class="card border-primary">
+        <div class="card-img-top mt-2 col-12">
+          <agm-map [latitude]="lat" [longitude]="lng" >
+            <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
+          </agm-map>
+        </div>
 
-<hr />
+        <div class="card-body">
+          <div class="row mb-3 align-items-center">
+            <div class="col-md-4">
+              <h2 class="card-title">Lugares Cercanos</h2>
+            </div>
 
+            <div class="col-12 col-md-4 float-right">
 
-  </div>
-</div>
+              <select name="" id="" class="form-control">
+                <option value="">Buscar Por Categoria</option>
+                <option value="comida">Comida</option>
+                <option value="parques">Parques</option>
+                <option value="juegos">Juegos</option>
+                <option value="categoria">transporte</option>
+                <option value="categoria">Servicios</option>
+              </select>
+            </div>
+
+            <div class="col-4">
+              <a routerLink="/crearnegocio/new" class="btn btn-outline-primary float-right ">Añadir Nuevo Punto</a>
+            </div>
+
+          </div>
+
+          <table class="table">
+            <ng-container *ngFor="let lugar of lugares">
+              <tr>
+                <td> <a routerLink="/detalle/{{lugar.id}}">{{lugar.name}}</a></td>
+                <td><a routerLink="/crearnegocio/{{lugar.id}}">Editar</a></td>
+              </tr>
+            </ng-container>
+          </table>
+
+        </div><!-- fin cardBody-->
+      </div><!--fin card-->
+    </div><!--fin ccol-12 que contiene la card-->
+  </div><!--fin eow principal-->
+</div><!--fin container-->

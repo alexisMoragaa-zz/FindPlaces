@@ -15,6 +15,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from'angularfire2/database';
 import { environment } from '../environments/environment';
 import { CrearnegocioComponent } from './crearnegocio/crearnegocio.component';
+import { HttpModule } from "@angular/http";
 
 const appRoutes:Routes = [
   {path:'',component: LugaresComponent},
@@ -22,7 +23,7 @@ const appRoutes:Routes = [
   {path:'detalle/:id',component: DetalleComponent},
   {path:'contacto',component: ContactoComponent},
   {path:'fundamentos',component: FundamentoComponent},
-  {path:'crearnegocio',component: CrearnegocioComponent},
+  {path:'crearnegocio/:id',component: CrearnegocioComponent},
 ];
 
 
@@ -36,7 +37,7 @@ const appRoutes:Routes = [
     DetalleComponent,
     ContactoComponent,
     CrearnegocioComponent,
-    CrearnegocioComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,8 +45,9 @@ const appRoutes:Routes = [
       AngularFireDatabaseModule,
     FormsModule,//importamos el formsModule para usar la comunicacion twho data binding
     RouterModule.forRoot(appRoutes),
+    HttpModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBZOmCYgJK9UOeViINSFNtZ8HmyI23IalA'
+      apiKey: 'AIzaSyDahZw8eCN6uhFG-UEcU91G6eQpiWmgVWE'
     })
   ],
   providers: [LugaresService],

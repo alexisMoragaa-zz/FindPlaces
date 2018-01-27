@@ -5,18 +5,28 @@
     <div class="col-md-8 mt-5">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Crear Negocio</h5>
+          <h3 class="card-title text-center">Añadir Nuevo Punto</h3>
             <form action="">
               <label for="" class="control-label">Nombre</label>
               <input type="text" class="form-control" [(ngModel)]="lugar.name" name="name">
 
-              <label for="" class="control-label">Plan</label>
-              <input type="text" class="form-control" [(ngModel)]="lugar.plan" name="plan">
+              <label for="" class="control-label">Categoria</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.category" name="category">
 
               <label for="" class="control-label">Descripcion</label>
               <textarea name="name" rows="4" cols="80" [(ngModel)]="lugar.description" name="description"class="form-control"></textarea>
+
+              <h5 class="text-muted mt-2">Datos de Direccion</h5>
+              <label for="" class="control-label">Calle</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.calle" name="calle">
+
+              <label for="" class="control-label">Ciudad</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.ciudad" name="ciudad">
+
+              <label for="" class="control-label">Pais</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.pais" name="pais">
             </form>
-          <a  class="btn btn-primary mt-3 right" (click)="guardarLugar()">Enviar</a>
+          <a  class="btn btn-outline-primary mt-3 float-right" (click)="guardarLugar()">Enviar</a>
         </div>
       </div>
     </div>
@@ -24,18 +34,21 @@
     <div class="col-md-4 mt-5">
       <div class="card text-center">
         <div class="card-header">
-          MiRecoleta
+          Consejos para Añadir un nuevo Punto
         </div>
         <div class="card-body">
-          <h5 class="card-title">Nuestra Vision</h5>
-          <p class="card-text">En MiRecoleta queremos que conoscas tu comuna, queremos que sepas donde se encuentran
-             esos lugares unicos especiales que hacen de nuestra comuna un lugar unico y especial
-             donde vivir</p>
+          <h5 class="card-title">Categoria</h5>
+          <p class="card-text">Para crear un nuevo punto en el mapa primero identifica a que categoria Pertenece <br>
+            idenrificar de forma clara los puntos por categoria nos ayuda a tener busquedas mas completas</p>
 
-             <h5 class="card-title">Nuestra Mision</h5>
-             <p class="card-text">Conectar lugares y negocios con personas, dandote a conocer un mundo de pisivilidades
-                que normalmente son poco accesible devido a su falta de publicidad o propaganda</p>
+          <h5 class="card-title">Direccion</h5>
+          <p class="card-text">Asegurate de agregar la direccion Correcta, ya que en base a esta posicionamos nuestro marcador en el mapa. <br>
+            Recuerda que el campo calle, incluye el nombre de la calle y numero de la misma</p>
+
+          <h5 class="card-title">Descripcion</h5>
+          <p class="card-text">Añadir una descripcion completa ayuda a otros usuarios a seleccionar de forma mas sencilla lugares que visitar</p>
         </div>
+
         <div class="card-footer text-muted">
           @MiRecoleta
         </div>
