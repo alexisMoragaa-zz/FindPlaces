@@ -30,7 +30,9 @@
             <div class="col-4">
               <a routerLink="/crearnegocio/new" class="btn btn-outline-primary float-right ">Añadir Nuevo Punto</a>
             </div>
-
+            <div class="alert alert-warning" role="alert" *ngIf="errorText">
+              {{errorText}}
+            </div>
           </div>
 
           <table class="table">
