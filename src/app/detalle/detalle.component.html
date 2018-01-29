@@ -1,20 +1,22 @@
 <div class="container mt-2">
 
-  <agm-map style="height:500px" [latitude]="lat" [longitude]="lng" >
+  <agm-map  [latitude]="lugar.lat" [longitude]="lugar.lng" [zoom]="15">
     <agm-marker [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
   </agm-map>
 
   <h1 class="text-muted text-center">{{lugar.name}}</h1>
   <hr/>
-
+lat {{lugar.lat}}
+lng {{lugar.lng}}
   <small>Distancia :  Km</small>
   <div class="card">
     <div class="card-body">
       <p>{{lugar.description}}</p>
     </div>
     <div class="card footer">
-      <b>Subscripcion {{lugar.plan}}</b>
+      <b>Categoria : {{lugar.category}}</b>
     </div>
+
   </div>
 
 </div>

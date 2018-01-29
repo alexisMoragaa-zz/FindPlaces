@@ -8,8 +8,8 @@ import { LugaresService } from '../services/lugares.service';
 
 })
 export class DetalleComponent{
-  lat:number=-33.3898208;//latitud para cargar el marcador en el mapa
-  lng:number=-70.64833810000005;//longitud para cargar el marcador en el mapa
+  lat:number=-33.4013924;//latitud para cargar el marcador en el mapa
+  lng:number=-70.6438089;//longitud para cargar el marcador en el mapa
 id = null;
 lugar:any = {};
 constructor(private route: ActivatedRoute, private lugaresServices: LugaresService){
@@ -19,6 +19,7 @@ constructor(private route: ActivatedRoute, private lugaresServices: LugaresServi
   this.lugaresServices.getLugar(this.id)
   .valueChanges().subscribe(lugar => {
     this.lugar = lugar;
+
   });
 
 }

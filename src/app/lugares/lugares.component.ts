@@ -8,15 +8,14 @@ import { LugaresService } from '../services/lugares.service'
 })
 export class LugaresComponent {
 
-  lat:number=-33.3898208;//latitud para cargar el marcador en el mapa
-  lng:number=-70.64833810000005;//longitud para cargar el marcador en el mapa
+  lat:number=-33.4013924;//latitud para cargar el marcador en el mapa
+  lng:number=-70.6438089;//longitud para cargar el marcador en el mapa
   lugares = null;
   errorText='';
   constructor(lugaresSer: LugaresService){
     // this.lugares = lugaresSer.getLugares();
     lugaresSer.getLugares()
       .subscribe(lugares => {//cuando usamos la peticion get mediante http quitamos el ValueChanges().subscribe()
-
         // this.lugares = lugares;//obtenemos mediante web sockets
 
         this.lugares = lugares;//cuando hacemos la peticion completa y formateamos la peticion con el operador map, este ya conbierte

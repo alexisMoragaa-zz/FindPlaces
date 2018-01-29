@@ -4,8 +4,8 @@
     <div class="col-12 mt-2">
       <div class="card border-primary">
         <div class="card-img-top mt-2 col-12">
-          <agm-map [latitude]="lat" [longitude]="lng" >
-            <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="14">
+            <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng" ></agm-marker>
           </agm-map>
         </div>
 

@@ -41,8 +41,8 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,
-     AngularFireModule.initializeApp(environment.firebase),
-      AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     FormsModule,//importamos el formsModule para usar la comunicacion twho data binding
     RouterModule.forRoot(appRoutes),
     HttpModule,
