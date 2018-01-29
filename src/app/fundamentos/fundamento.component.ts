@@ -14,6 +14,9 @@ export class FundamentoComponent {
 
   lat:number=-33.3898208;//latitud para cargar el marcador en el mapa
   lng:number=-70.64833810000005;//longitud para cargar el marcador en el mapa
+  ejemplotittlecase="En este ejemplo usamos titlecase para agregar mayuscula en  la primera letra de cada palabra y su sintaxis es = |titlecase";
+  ejemploupercase="ejemplo de uppercase :escribimos en minisculas, y luego transformamos a mayusculas sintaxis es = |upercase";
+  ejemplolowercase="EJEMPLO DE LOWERCASE :ESCRIBIMOS EN MAYUSCULAS, Y LUEGO TRANSFORMAMOS SU SINTAXIS ES = |lowercase";
 
   constructor(){
     //creamos un contructor para esta clase, para de esta forma ejecutar una funcion que abilitara y desabilitara el boton
@@ -26,7 +29,9 @@ export class FundamentoComponent {
     },7000)
 
   }
-
+funciona(){
+  console.log("esto funca");
+}
   clickme(){
     alert('hiciste click en el boton y desencadenaste la funcion asignada mediante Event Binding');
   }// esta es una funcion para mostrar un ejemplo de event Binding, ya que se desencadena con el evento click de un boton en nuestro html

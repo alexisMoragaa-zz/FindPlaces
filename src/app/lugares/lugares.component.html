@@ -1,7 +1,7 @@
 <div class="container ">
   <div class="row">
 
-    <div class="col-12 mt-2">
+    <div class="col-12 mt-2 mb-5">
       <div class="card border-primary">
         <div class="card-img-top mt-2 col-12">
           <agm-map [latitude]="lat" [longitude]="lng" [zoom]="14">
@@ -38,8 +38,10 @@
           <table class="table">
             <ng-container *ngFor="let lugar of lugares">
               <tr>
-                <td> <a routerLink="/detalle/{{lugar.id}}">{{lugar.name}}</a></td>
-                <td><a routerLink="/crearnegocio/{{lugar.id}}">Editar</a></td>
+                <td> <a routerLink="/detalle/{{lugar.id}}">{{lugar.name |titlecase}}</a></td>
+                <td><a routerLink="#">{{lugar.calle}}</a></td>
+                <td><a routerLink="#">Añadido: {{lugar.id |date:"dd-MM-yyyy" }}</a></td>
+                <!-- |date:"dd-MM-yyyy" -->
               </tr>
             </ng-container>
           </table>

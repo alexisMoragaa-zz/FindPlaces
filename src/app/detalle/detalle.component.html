@@ -1,22 +1,33 @@
-<div class="container mt-2">
+<div class="container mt-1">
 
   <agm-map  [latitude]="lugar.lat" [longitude]="lugar.lng" [zoom]="15">
     <agm-marker [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
   </agm-map>
 
-  <h1 class="text-muted text-center">{{lugar.name}}</h1>
-  <hr/>
-lat {{lugar.lat}}
-lng {{lugar.lng}}
-  <small>Distancia :  Km</small>
-  <div class="card">
-    <div class="card-body">
-      <p>{{lugar.description}}</p>
-    </div>
-    <div class="card footer">
-      <b>Categoria : {{lugar.category}}</b>
-    </div>
+    <h1 class="text-muted text-center">{{lugar.name |titlecase}}</h1>
+    <hr/>
 
+<div class="row mb-1">
+  <div class="col-md-6">
+    <small>Distancia :  Km</small>
   </div>
+
+  <div class="col-md-6">
+    <a routerLink="/crearnegocio/{{lugar.id}}" class="btn btn-outline-info float-right">Editar Registro</a>
+  </div>
+
+</div>
+
+
+
+    <div class="card">
+      <div class="card-body">
+        <p>{{lugar.description }}</p>
+      </div>
+      <div class="card footer">
+        <b>Categoria : {{lugar.category}}</b>
+      </div>
+
+    </div>
 
 </div>
