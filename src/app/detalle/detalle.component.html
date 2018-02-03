@@ -22,7 +22,7 @@
 
     <div class="card">
       <div class="card-body">
-        <p>{{lugar.description }}</p>
+        <p [innerHtml]="lugar.description |linkifystr"></p>
       </div>
       <div class="card footer">
         <b>Categoria : {{lugar.category}}</b>

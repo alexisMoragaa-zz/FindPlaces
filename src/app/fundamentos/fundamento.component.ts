@@ -17,6 +17,7 @@ export class FundamentoComponent {
   ejemplotittlecase="En este ejemplo usamos titlecase para agregar mayuscula en  la primera letra de cada palabra y su sintaxis es = |titlecase";
   ejemploupercase="ejemplo de uppercase :escribimos en minisculas, y luego transformamos a mayusculas sintaxis es = |upercase";
   ejemplolowercase="EJEMPLO DE LOWERCASE :ESCRIBIMOS EN MAYUSCULAS, Y LUEGO TRANSFORMAMOS SU SINTAXIS ES = |lowercase";
+  ejemplopipe="Este es un ejemplo de lon que se puede hacer con la libreria linkify @linkify #linkify visitanos en https://www.linifyjs.com, estos enlaces son transformados en enlacesa con linkify";
 
   constructor(){
     //creamos un contructor para esta clase, para de esta forma ejecutar una funcion que abilitara y desabilitara el boton
