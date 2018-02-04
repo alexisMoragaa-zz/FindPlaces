@@ -263,10 +263,23 @@
           <p>Ayudandonos de la libreria Linkifyjs de javascript buscarenos los links en nuestro texto plano y los transformaremos en enlaces</p>
           <p [innerHtml]="ejemplopipe | linkifystr"></p>
         </div>
-        <div class="col-mb-2" id="cuadrado">
-          <h3 class="center">Animaciones en Angular</h3>
+
+        <div class="row align-items-center">
+          <div class="col-12">
+            <h3 class="center">Animaciones en Angular</h3>
+          </div>
+
+          <div class="col-md-4">
+            <div id="cuadrado" class="mt-5" [@contenedorAnimable]="state"></div>
+          </div>
+
+          <div class="col-md-8">
+            <input type="button" name="" value="Iniciar Animacion" (click)="animame()" class="btn btn-outline-warning">
+            <p>Para este ejemplo de animaciones usaremos un div, el cual pasara de opacidad 0 y color red, a
+            opacidad 1 y color blue, esto lo realizara mediante animaciones en angular que tardaran 2 segundos en aparecer, y un
+          segundo en desaparecer, esto lo controlamos mediante el boton, el cual mediante un operador ternario pone el estado en inicial
+        o final segun corresponda para cambiar el estado de la animacion</p>
+          </div>
         </div>
 
-</div>
-
-<small>{{funciona() }}</small>
+      </div>

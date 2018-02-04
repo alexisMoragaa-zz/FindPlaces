@@ -1,11 +1,28 @@
 import { Component } from '@angular/core';
-
+import {trigger, state, style, transition, animate} from "@angular/animations"
 @Component({
   selector: 'app-fundamento',
   templateUrl: './fundamento.component.html',
-  styleUrls: ['./fundamento.component.css']
+  styleUrls: ['./fundamento.component.css'],
+  animations:[
+    trigger('contenedorAnimable',[
+      state('inicial',style({
+        opacity:0,
+        backgroundColor:'green',
+        transform:'rotate3d(0,0,0,0deg)',
+      })),
+      state('final',style({
+        opacity:1,
+        backgroundColor:'blue',
+        transform:'rotate3d(5,10,20,45deg)',
+      })),
+      transition('inicial => final', animate(2000)),
+      transition('final => inicial', animate(1000)),
+    ])
+  ]
 })
 export class FundamentoComponent {
+
   but = true;//variable que sera modificada con property binding
   btn = "btn btn-outline-warning"//variable que sera modificada con property binding
 
@@ -36,7 +53,10 @@ funciona(){
   clickme(){
     alert('hiciste click en el boton y desencadenaste la funcion asignada mediante Event Binding');
   }// esta es una funcion para mostrar un ejemplo de event Binding, ya que se desencadena con el evento click de un boton en nuestro html
-
+state="final";
+animame(){
+  this.state = (this.state ==="final") ? "inicial" : "final";
+}
   name='';//name y last name son variables que usamos para el ejemplo de twoDataBinding, que comunica el html con el controller y viceversa
   lastName='';
 

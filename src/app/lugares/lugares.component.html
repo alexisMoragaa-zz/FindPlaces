@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container " [@loadPlaces]="state">
   <div class="row">
 
     <div class="col-12 mt-2 mb-5">
@@ -35,8 +35,8 @@
             </div>
           </div>
 
-          <table class="table">
-            <ng-container *ngFor="let lugar of lugares">
+          <table class="table" >
+            <ng-container *ngFor="let lugar of lugares" >
               <tr>
                 <td> <a routerLink="/detalle/{{lugar.id}}">{{lugar.name |titlecase}}</a></td>
                 <td><a routerLink="#">{{lugar.calle}}</a></td>

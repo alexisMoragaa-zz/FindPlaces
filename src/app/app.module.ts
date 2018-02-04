@@ -17,6 +17,8 @@ import { environment } from '../environments/environment';
 import { CrearnegocioComponent } from './crearnegocio/crearnegocio.component';
 import { HttpModule } from "@angular/http";
 import { LinkifystrPipe } from './pipes/linkifystr.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 const appRoutes:Routes = [
   {path:'',component: LugaresComponent},
@@ -40,9 +42,11 @@ const appRoutes:Routes = [
     CrearnegocioComponent,
     LinkifystrPipe,
 
+
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     FormsModule,//importamos el formsModule para usar la comunicacion twho data binding
