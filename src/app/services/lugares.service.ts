@@ -10,14 +10,19 @@ API_ENDPOINT ="https://cursoangular4-1516112349964.firebaseio.com";
 constructor(private afDB:AngularFireDatabase, private http:Http){}
 
   public getLugares(){
-    // return this.afDB.list('lugares/');//obtenemos lugares mediante websockets
+    return this.afDB.list('lugares/');//obtenemos lugares mediante websockets
     // return this.http.get(this.API_ENDPOINT+'/lugares.json');//obtenemos el objeto lugares mediante http
-    return this.http.get(this.API_ENDPOINT+'/.json')//obtenemos todo lo que tenemos en firebase, para esto necesitamos dar formato anuestra respuesta  es por esto que usamos el operador map
-      .map((resultado)=>{
-      const data = resultado.json().lugares;
-      return data;
-  })
+    // return this.http.get(this.API_ENDPOINT+'/.json')//obtenemos todo lo que tenemos en firebase, para esto necesitamos dar formato anuestra respuesta  es por esto que usamos el operador map
+    //   .map((resultado)=>{
+    //   const data = resultado.json().lugares;
+    //   return data;
+  // })
   }
+
+public getDestacados(){
+return this.afDB.list('lugares', ref => ref.orderByChild('stars'));
+
+}
 
   public getLugar(id){
     return this.afDB.object('lugares/'+id);

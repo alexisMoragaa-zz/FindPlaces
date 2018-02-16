@@ -1,0 +1,21 @@
+
+<div class="container mb-5">
+  <div class="row mb-5">
+      <div class="col-md-4 offset-md-4 mt-5 mb-5">
+        <div class="card card-body bg-light">
+        <div class="card-title">
+          <h5 class="text-muted text-center">Registro de Usuario</h5>
+        </div>
+
+        <label for="" class="control-label">Email</label>
+        <input type="email" class="form-control" name="Email" [(ngModel)]="registro.email">
+        <br>
+        <label for="" class="control-label">Password</label>
+        <input type="password" class="form-control" name="Email" [(ngModel)]="registro.password">
+
+        <hr />
+        <a class="btn btn-outline-primary btn-block " (click)="registrar()">Registrarse</a>
+      </div>
+    </div>
+  </div>
+</div>

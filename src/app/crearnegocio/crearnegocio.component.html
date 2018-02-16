@@ -1,7 +1,7 @@
 
   <div class="container mb-5 mb-5" >
 
-  <div class="row mt-5">
+  <div class="row mt-3">
     <div class="col-md-8 mt-5">
       <div class="card">
         <div class="card-body">
@@ -15,9 +15,17 @@
 
               <label for="" class="control-label">Descripcion</label>
               <textarea name="name" rows="4" cols="80" [(ngModel)]="lugar.description" name="description"class="form-control"></textarea>
-
+              <div class="card card-light">
+                <form>
+                  <label for="" class="control-label">Ingresa la Direccion</label>
+                  <input  [formControl]="searchField" class="form-control">
+                  <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let result of results$ |async" >{{results.formatted_address}}</li>
+                  </ul>
+                </form>
+              </div>
               <h5 class="text-muted mt-2">Datos de Direccion</h5>
-              <label for="" class="control-label">Calle</label>
+              <label for="" >Calle</label>
               <input type="text" class="form-control" [(ngModel)]="lugar.calle" name="calle">
 
               <label for="" class="control-label">Ciudad</label>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-4 offset-md-4 mt-5">
+        <div class="card card-body bg-light">
+
+        <label for="" class="control-label">Email</label>
+        <input type="email" class="form-control" name="Email" [(ngModel)]="loginParams.email">
+        <br>
+        <label for="" class="control-label">Password</label>
+        <input type="password" class="form-control" name="Email" [(ngModel)]="loginParams.password">
+        <hr />
+        <input type="button" name="" value="" class="btn btn-outline-success btn-block" value="Login!" (click)="login()">
+        <input type="button" class="btn btn-outline-primary btn-block" (click)="facebookLogin()" value="Login con Facebook">
+        <input type="button" class="btn btn-outline-secondary btn-block"  value="Cancelar">
+
+        </div>
+      </div>
+
+  </div>
+</div>

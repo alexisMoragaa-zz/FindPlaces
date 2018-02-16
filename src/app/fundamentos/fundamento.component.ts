@@ -55,7 +55,7 @@ funciona(){
   }// esta es una funcion para mostrar un ejemplo de event Binding, ya que se desencadena con el evento click de un boton en nuestro html
 state="final";
 animame(){
-  this.state = (this.state ==="final") ? "inicial" : "final";
+  this.state = (this.state === "final") ? "inicial" : "final";
 }
   name='';//name y last name son variables que usamos para el ejemplo de twoDataBinding, que comunica el html con el controller y viceversa
   lastName='';

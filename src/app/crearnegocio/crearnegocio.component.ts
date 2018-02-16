@@ -1,6 +1,10 @@
 import { Component} from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
 import { ActivatedRoute } from "@angular/router";
+import {FormControl} from "@angular/forms";
+import {Observable} from 'rxjs';
+import {Http} from "@angular/http";
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-crearnegocio',
@@ -11,7 +15,9 @@ export class CrearnegocioComponent{
 
     lugar:any = {} ;
     id:any ="";
-  constructor(private lugaresServices: LugaresService, private route: ActivatedRoute){
+    results$: Obserbable<any>;
+    private searchField:FormControl;
+  constructor(private lugaresServices: LugaresService, private route: ActivatedRoute, private http:Http){
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
     if(this.id !='new'){
@@ -20,6 +26,13 @@ export class CrearnegocioComponent{
         this.lugar = lugar;
       });
     }
+    const URL='https://maps.google.com/maps/api/geocode/json?key=AIzaSyAsDhDzeXPHkDx5oDV54c4hJmZvpVKKduM';
+    this.searchField = new FormControl();
+    this.results$ = this.searchField.valueChanges
+      .debounceTime(500)
+      .switchMap(query => this.http.get(`${URL}&address=${query}`))
+      .map(response => response.json())
+      .map(response =>response.results);
   }
 
 
