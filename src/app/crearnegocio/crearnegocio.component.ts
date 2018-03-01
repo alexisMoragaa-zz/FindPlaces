@@ -15,7 +15,7 @@ export class CrearnegocioComponent{
 
     lugar:any = {} ;
     id:any ="";
-    results$: Obserbable<any>;
+    results$: Observable <any>;
     private searchField:FormControl;
   constructor(private lugaresServices: LugaresService, private route: ActivatedRoute, private http:Http){
     this.id = this.route.snapshot.params['id'];

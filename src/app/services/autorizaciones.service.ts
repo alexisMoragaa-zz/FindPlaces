@@ -40,7 +40,7 @@ public FacebookLogin(){
         alert('Usuario Registrado con exito');
         console.log(response);
         this.router.navigate(['lugares']);
-      })s
+      })
       .catch((error)=>{
         alert('Usuario no registrado');
         console.log(error);
