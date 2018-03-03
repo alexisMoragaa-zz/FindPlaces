@@ -26,7 +26,9 @@
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "firebase": "^4.9.0",
+    "jquery": "^3.3.1",
     "linkifyjs": "^2.1.5",
+    "popper.js": "^1.12.9",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

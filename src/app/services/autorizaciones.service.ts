@@ -54,6 +54,9 @@ public FacebookLogin(){
   public getName(){
     return this.fireAuth.auth.currentUser.displayName;
   }
+  public getImage(){
+      return this.fireAuth.auth.currentUser.photoURL;
+  }
   public logout(){
     alert("Hasta pronto!");
     this.fireAuth.auth.signOut();

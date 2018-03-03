@@ -8,12 +8,14 @@ import {AutorizacionesService} from "./services/autorizaciones.service";
 export class AppComponent {
   loggedIn = false;
   name = null;
+  image = null;
   constructor(private authservice:AutorizacionesService){
     this.authservice.isLogged()
       .subscribe((result)=>{
         if(result &&  result.uid){
           this.loggedIn=true;
           this.name = authservice.getName();
+          this.image = authservice.getImage();
         }else{
           this.loggedIn=false;
         }

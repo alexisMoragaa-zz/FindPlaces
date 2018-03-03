@@ -19,28 +19,32 @@
         <a class="nav-link " routerLinkActive="active" routerLink="/fundamentos">Fundamentos</a>
       </li>
     </ul>
-
   </div>
+
   <ul class="navbar-nav justify-content-end" *ngIf="!loggedIn">
-    <li class="nav-item">
-      <a class="nav-link active"routerLinkActive="active" routerLink="/login">Login</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active"routerLinkActive="active" routerLink="/registro">Registrarse</a>
-    </li>
+  <img class="rounded-circle  img mr-4" data-toggle="collapse" href="#perfil" role="button" aria-expanded="false" aria-controls="perfil" src="https://cdn6.aptoide.com/includes/themes/2014/images/header/default_user.svg?timestamp=timestamp=20171227">
   </ul>
 
-  <ul class="navbar-nav justify-content-end" *ngIf="loggedIn">
-
-    <li class="nav-item">
-      <a class="nav-link active"routerLinkActive="active">{{name}}</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active"routerLinkActive="active" (click)="logout()">Logout</a>
-    </li>
+  <ul class="navbar-nav justify-content-end dropleft" *ngIf="loggedIn">
+    <img class="rounded-circle  img mr-4" data-toggle="collapse" href="#perfil" role="button" aria-expanded="false" aria-controls="perfil" src="{{image}}">
   </ul>
 
 </nav>
+
+<div class="collapse col-12 col-md-4 offset-md-8 col-lg-2 offset-lg-10" id="perfil">
+  <ul class="list-group">
+    <ng-container  *ngIf="loggedIn">
+      <a class="list-group-item list-group-item-action text-right"routerLinkActive="active">{{name |slice:0:20}}...</a>
+      <a class="list-group-item list-group-item-action text-right"routerLinkActive="active" (click)="logout()">Logout</a>
+    </ng-container>
+    <ng-container  *ngIf="!loggedIn">
+      <a class="list-group-item list-group-item-action text-right"routerLinkActive="active" routerLink="/login">Login</a>
+      <a class="list-group-item list-group-item-action text-right"routerLinkActive="active" routerLink="/registro">Registrarse</a>
+    </ng-container>
+
+  </ul>
+</div>
+
 
 
 <router-outlet></router-outlet>
