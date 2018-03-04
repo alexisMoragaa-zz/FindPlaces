@@ -16,7 +16,7 @@ export class CrearnegocioComponent{
     lugar:any = {} ;
     id:any ="";
     results$: Observable <any>;
-    private searchField:FormControl;
+    // private searchField:FormControl;
   constructor(private lugaresServices: LugaresService, private route: ActivatedRoute, private http:Http){
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
@@ -26,13 +26,13 @@ export class CrearnegocioComponent{
         this.lugar = lugar;
       });
     }
-    const URL='https://maps.google.com/maps/api/geocode/json?key=AIzaSyAsDhDzeXPHkDx5oDV54c4hJmZvpVKKduM';
-    this.searchField = new FormControl();
-    this.results$ = this.searchField.valueChanges
-      .debounceTime(500)
-      .switchMap(query => this.http.get(`${URL}&address=${query}`))
-      .map(response => response.json())
-      .map(response =>response.results);
+    // const URL='https://maps.google.com/maps/api/geocode/json?key=AIzaSyAsDhDzeXPHkDx5oDV54c4hJmZvpVKKduM';
+    // this.searchField = new FormControl();
+    // this.results$ = this.searchField.valueChanges
+    //   .debounceTime(500)
+    //   .switchMap(query => this.http.get(`${URL}&address=${query}`))
+    //   .map(response => response.json())
+    //   .map(response =>response.results);
   }
 
 

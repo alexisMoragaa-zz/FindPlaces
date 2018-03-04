@@ -15,7 +15,7 @@
 
               <label for="" class="control-label">Descripcion</label>
               <textarea name="name" rows="4" cols="80" [(ngModel)]="lugar.description" name="description"class="form-control"></textarea>
-              <div class="card card-light">
+              <!-- <div class="card card-light">
                 <form>
                   <label for="" class="control-label">Ingresa la Direccion</label>
                   <input  [formControl]="searchField" class="form-control">
@@ -23,7 +23,7 @@
                     <li class="list-group-item" *ngFor="let result of results$ |async" >{{results.formatted_address}}</li>
                   </ul>
                 </form>
-              </div>
+              </div> -->
               <h5 class="text-muted mt-2">Datos de Direccion</h5>
               <label for="" >Calle</label>
               <input type="text" class="form-control" [(ngModel)]="lugar.calle" name="calle">

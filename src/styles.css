@@ -14,3 +14,16 @@ height: 30em;
   position: absolute;
   z-index: 100;
 }
+
+@media screen and (max-width: 600px){
+agm-map{
+  height: 18em;
+}
+}
+
+@media screen and (min-width: 1500px){
+  .margenes{
+    margin-left:45px;
+    margin-right: 45px;
+  }
+}

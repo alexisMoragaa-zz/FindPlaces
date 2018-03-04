@@ -1,7 +1,8 @@
-<div class="contenedor col-md-12 maps" >
-  <!-- [@loadPlaces]="state" -->
-  <div class="col-md-12">
-    <div class="col-md-12 mt-1">
+<!-- <div class="contenedor col-md-12 maps" > -->
+
+  <!-- <div class="col-md-12"> -->
+  <div class="margenes">
+        <div class="col-md-12 mt-1">
       <div class="card border-primary">
         <div class="mt-1 mb-1 ml-1 mr-1">
           <agm-map [latitude]="lat" [longitude]="lng" [zoom]="14">
@@ -15,14 +16,14 @@
     <div class="col-12">
       <div class="row">
         <div class="col-12 col-lg-8 mt-2 mb-5">
-          <div class="card border-primary">
+          <div class="card ">
             <div class="card-body">
               <div class="row mb-3 align-items-center">
-                <div class=" col-12 col-md-4">
+                <div class=" col-12 col-lg-4">
                   <h2 class="card-title">Lugares Cercanos</h2>
                 </div>
 
-                <div class="col-12 col-lg-4 float-right">
+                <div class="col-12 col-lg-4 float-right mt-2">
                   <select name="" id="" class="form-control">
                     <option value="">Buscar Por Categoria</option>
                     <option value="comida">Comida</option>
@@ -34,45 +35,47 @@
                 </div>
 
                 <div class="col-12 col-lg-4" >
-                  <a routerLink="/crearnegocio/new" class="btn btn-outline-primary float-right  btn-block">Añadir Nuevo Punto</a>
+                  <a routerLink="/crearnegocio/new" class="btn btn-outline-primary float-right  btn-block mt-2">Añadir Nuevo Punto</a>
                 </div>
                 <div class="alert alert-warning" role="alert" *ngIf="errorText">
                   {{errorText}}
                 </div>
               </div>
 
-              <div class="table-responsive">
-                <table class="table" >
-                  <ng-container *ngFor="let lugar of lugares" >
-                    <tr>
-                      <td> <a routerLink="/detalle/{{lugar.id}}">{{lugar.name |titlecase}}</a></td>
-                      <td><a routerLink="#">{{lugar.calle}}</a></td>
-                      <td><a routerLink="#">Añadido: {{lugar.id |date:"dd-MM-yyyy" }}</a></td>
-                    </tr>
-                  </ng-container>
-                </table>
-              </div>
 
+              <div class="row align-items-center">
+                <ng-container *ngFor="let lugar of lugares" >
+                  <div class="col-12 col-md-6">
+                    <div class="alert alert-light border border-primary col-12">
+                      <a routerLink="/detalle/{{lugar.id}}"><h4>{{lugar.name |titlecase}}</h4></a>
+                      <span class="mr-4">Direccion: {{lugar.calle}}</span>
+                      <span class="">Añadido: {{lugar.id |date:"dd-MM-yyyy" }}</span>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
 
             </div><!-- fin cardBody-->
           </div><!--fin card-->
         </div><!--fin col-md-8 que contiene la card-->
-        <div class="col-12 col-md-4 mt-2 mb-5">
 
-            <div class="row mb-3 align-items-center">
+
+        <div class="col-12 col-lg-4 mt-2 mb-5">
+          <div class="row mb-3 align-items-center">
+
               <div class="col-12">
                 <h2 class="card-title text-center text-muted">Lugares Destacados</h2>
-              </div>
-              <ng-container *ngFor="let destacado of destacados?.slice().reverse()" class="col-12">
+              <ng-container *ngFor="let destacado of destacados?.slice().reverse()" >
                 <div class="alert alert-success col-12" *ngIf="destacado.stars > 5" role="alert" >
                     <a routerLink=""><h4>{{destacado.name}} <span class="badge badge-secondary float-right">{{destacado.stars}} Puntos</span></h4></a>
                     <p [innerHtml]="destacado.description |linkifystr"></p>
                 </div>
               </ng-container>
             </div>
-        </div>
+            </div>
+          </div>
 
       </div><!--fin Row principal-->
     </div>
   </div>
-</div>
+<!-- </div> -->
